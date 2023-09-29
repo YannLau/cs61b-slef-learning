@@ -82,7 +82,18 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList temp = A;
+        if(temp==null){
+            A=B;
+        }else if (B==null){
+            ;
+        }else{
+            while(temp.rest!=null){
+                temp=temp.rest;
+            }
+            temp.rest=B;
+        }
+        return A;
     }
 
     /**
@@ -91,22 +102,52 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList aim = new IntList();
+        IntList interim = aim;
+        if(A==null && B==null){
+            return null;
+        }else if(A==null){
+            insert(B, interim);
+        }else if(B==null){
+            insert(A, interim);
+        } else{
+            IntList temp = A;
+            while(temp!=null){
+                IntList newlist = new IntList();
+                interim.first = temp.first;
+                temp=temp.rest;
+                interim.rest = newlist;
+                interim=newlist;
+            }
+            temp = B;
+            if(temp!=null) {
+                while (temp != null) {
+                    IntList newlist = new IntList();
+                    interim.first = temp.first;
+                    temp=temp.rest;
+
+                    if(temp!=null){
+                        interim.rest = newlist;
+                        interim=newlist;
+                    }
+                }
+            }
+        }
+        return aim;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    private static void insert(IntList B, IntList interim) {
+        IntList temp = B;
+        while(temp!=null){
+            IntList newlist = new IntList();
+            interim.first = temp.first;
+            temp=temp.rest;
+            if(temp!=null){
+                interim.rest = newlist;
+                interim=newlist;
+            }
+        }
+    }
 
 
     /**
