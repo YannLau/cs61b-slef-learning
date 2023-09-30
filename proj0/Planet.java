@@ -2,7 +2,7 @@ import static java.lang.Math.sqrt;
 
 public class Planet {
     //private final Planet p;
-    public static double G = 6.67E-11;
+    private static final double G = 6.67E-11;
     public double xxPos;
     public double yyPos;
     public double xxVel;
@@ -16,7 +16,7 @@ public class Planet {
         this.xxVel = xxVel;
         this.yyVel = yyVel;
         this.mass = mass;
-        this.imgFileName = "./images/"+imgFileName;
+        this.imgFileName = imgFileName;
     }
     public Planet(Planet p){
         this.xxPos = p.xxPos;
@@ -75,6 +75,6 @@ public class Planet {
         this.yyPos += this.yyVel*time;
     }
     public void draw(){
-        StdDraw.picture(xxPos,yyPos,imgFileName);
+        StdDraw.picture(xxPos,yyPos,"images\\"+imgFileName);
     }
 }
