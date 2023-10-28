@@ -13,6 +13,13 @@ public class LeapYear {
             System.out.printf("%d is not a leap year.\n", year);
         }
     }
+	/** 判断闰年
+	* @author YannLau
+	* date：2023.9.25
+	*/
+    public static boolean isLeapYear(int year){
+	return (year%4==0 && year%100!=0) || year%400==0;
+    }
 
     /** Must be provided an integer as a command line argument ARGS. */
     public static void main(String[] args) {
