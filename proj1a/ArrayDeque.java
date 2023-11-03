@@ -1,6 +1,6 @@
-public class ArrayDeque<Item> {
+public class ArrayDeque<T> {
     private int length = 8;
-    private Item[] items = (Item[]) (new Object[8]);
+    private T[] ts = (T[]) (new Object[8]);
     private int size = 0;
     private int front = 0;
     private int rear = 0;
@@ -32,60 +32,60 @@ public class ArrayDeque<Item> {
     }
 
     private void change_length(int new_length) {
-        Item[] new_items = (Item[]) (new Object[new_length]);
+        T[] new_items = (T[]) (new Object[new_length]);
         for (int i = 0; i < size; ++i) {
             new_items[i] = get(i);
         }
         length = new_length;
         rear = size;
         front = length - 1;
-        items = new_items;
+        ts = new_items;
     }
 
-    public void addFirst(Item item) {
+    public void addFirst(T t) {
         if (isFull()) {
             this.multiLen();
         }
         if (isEmpty()) {
-            items[front] = item;
+            ts[front] = t;
             front = (front + length - 1) % length;
             ++size;
             rear = (rear + 1 + length) % length;
         } else {
-            items[front] = item;
+            ts[front] = t;
             front = (front + length - 1) % length;
             ++size;
         }
     }
 
-    public void addLast(Item item) {
+    public void addLast(T t) {
         if (isFull()) {
             this.multiLen();
         }
         if (isEmpty()) {
-            addFirst(item);
+            addFirst(t);
         } else {
-            items[rear] = item;
+            ts[rear] = t;
             rear = (rear + length + 1) % length;
             ++size;
         }
     }
 
-    public Item get(int index) {
+    public T get(int index) {
         if (index + 1 <= size && index>=0) {
-            return items[(length + front + index + 1) % length];
+            return ts[(length + front + index + 1) % length];
         }
         return null;
     }
 
-    public Item removeLast() {
+    public T removeLast() {
         if (!isEmpty()) {
             rear = (rear + length - 1) % length;
             --size;
             if(size==0){
                 front=rear;
             }
-            Item temp = items[rear];
+            T temp = ts[rear];
             if (isSmallerThan25()) {
                 reduce_the_length();
             }
@@ -95,14 +95,14 @@ public class ArrayDeque<Item> {
         }
     }
 
-    public Item removeFirst() {
+    public T removeFirst() {
         if (!isEmpty()) {
             front = (front + 1 + length) % length;
             --size;
             if(size==0){
                 rear=front;
             }
-            Item temp = items[front];
+            T temp = ts[front];
             if (isSmallerThan25()) {
                 reduce_the_length();
             }
