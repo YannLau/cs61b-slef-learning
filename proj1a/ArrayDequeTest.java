@@ -5,7 +5,7 @@ public class ArrayDequeTest {
         System.out.println("------------------------------");
         System.out.println("初始化测试");
         System.out.println("初始length为");
-        System.out.println(arrayDeque.getLength());
+        //System.out.println(arrayDeque.getLength());
         System.out.println("初始size为");
         System.out.println(arrayDeque.size());
 
@@ -22,7 +22,7 @@ public class ArrayDequeTest {
         System.out.println("size为");
         System.out.println(arrayDeque.size());
         System.out.println("length为");
-        System.out.println(arrayDeque.getLength());
+        //System.out.println(arrayDeque.getLength());
 
         System.out.println("------------------------------");
         System.out.println("多元素200个测试");
@@ -32,7 +32,7 @@ public class ArrayDequeTest {
             arrayDeque.addLast("you");
         }
         System.out.println("length为");
-        System.out.println(arrayDeque.getLength());
+        //System.out.println(arrayDeque.getLength());
         System.out.println("size为");
         System.out.println(arrayDeque.size());
         System.out.println("打印结果");
@@ -46,7 +46,7 @@ public class ArrayDequeTest {
             arrayDeque.removeFirst();
         }
         System.out.println("length为");
-        System.out.println(arrayDeque.getLength());
+        //System.out.println(arrayDeque.getLength());
         System.out.println("size为");
         System.out.println(arrayDeque.size());
         System.out.println("打印结果");

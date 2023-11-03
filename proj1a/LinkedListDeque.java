@@ -1,5 +1,5 @@
 public class LinkedListDeque<T> {
-    Node<T> head_item;
+    private Node<T> head_item;
     private int size;
 
     public LinkedListDeque() {
@@ -35,6 +35,7 @@ public class LinkedListDeque<T> {
     public void addLast(T t) {
         if (isEmpty()) {
             this.addFirst(t);
+            return;
         } else {
             Node<T> i = new Node<>();
             i.setItem(t);

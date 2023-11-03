@@ -125,7 +125,7 @@ public class ArrayDeque<T> {
         }
     }
 
-    public int getLength(){
+    private int getLength(){
         return length;
     }
 }

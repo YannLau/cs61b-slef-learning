@@ -110,6 +110,13 @@ public class LinkedListDequeTest {
 		linkedListDeque.printDeque();
 		System.out.println("数组当前大小为："+linkedListDeque.size());
 
+		LinkedListDeque<Integer> LinkedListDeque = new LinkedListDeque<>();
+		LinkedListDeque.addLast(0);
+		LinkedListDeque.addFirst(1);
+		LinkedListDeque.addLast(2);
+		LinkedListDeque.addLast(3);
+		System.out.println(LinkedListDeque.size());
+
 
 	}
 
